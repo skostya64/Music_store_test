@@ -1,7 +1,7 @@
 from selenium import webdriver
 from pages.admin_panel_login_page import AdminPanelLoginPage
 from pages.check_four_strings_bass_page import CheckFourStringsBassPage
-from pages.login_page import LoginPage
+from pages.check_bass_name_page import CheckBassNamePage
 
 
 class Application:
@@ -13,13 +13,8 @@ class Application:
         self.driver.implicitly_wait(10)
         self.admin_panel_login_page = AdminPanelLoginPage(self.driver)
         self.check_four_strings_bass_page = CheckFourStringsBassPage(self.driver)
-        self.login_page = LoginPage(self.driver)
+        self.check_bass_name_page = CheckBassNamePage(self.driver)
 
     def quit(self):
         self.driver.quit()
 
-    def login(self, username, password):
-        self.admin_panel_login_page.open()
-        self.admin_panel_login_page.enter_username(username)
-        self.admin_panel_login_page.enter_password(password)
-        self.admin_panel_login_page.submit_login()
