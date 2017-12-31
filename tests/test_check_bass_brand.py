@@ -6,3 +6,4 @@ def test_check_bass_brand(app):
     app.check_four_strings_bass_page.click_electric_bass_guitars()
     app.check_four_strings_bass_page.click_four_strings()
     app.check_bass_name_page.select_name_brand()
+    app.check_bass_name_page.check_name_brand_in_products()

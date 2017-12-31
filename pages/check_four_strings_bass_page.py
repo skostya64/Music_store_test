@@ -15,5 +15,7 @@ class CheckFourStringsBassPage:
         self.driver.find_element_by_xpath("//a[@href='https://www.musicstore.de/ru_OT/EUR/-/4-/cat-BASS-BASEB4']").click()
 
     def check_quantity_four_strings_guitars(self):
-        self.driver.find_element_by_xpath("//div[@class='ident grid']")
+        four_strings = self.driver.find_element_by_xpath("//h1[text() = '4-струнные']").text
+        assert four_strings == "4-струнные"
+
 

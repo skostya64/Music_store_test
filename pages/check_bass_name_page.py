@@ -15,6 +15,13 @@ class CheckBassNamePage:
         self.driver.find_element_by_xpath("//a[@href='https://www.musicstore.de/ru_OT/EUR/-/4-/cat-BASS-BASEB4']").click()
 
     def select_name_brand(self):
-        self.driver.find_element_by_xpath("//span[@class='sprite ms-checkbox']").click()
+        self.driver.find_element_by_xpath("//span[text() = 'Производитель']").click()
+        self.driver.find_element_by_xpath("//span[@title = 'Epiphone']").click()
+        self.driver.find_element_by_xpath("//span[@class = 'apply btn btn-ms-std btn-lg']").click()
 
+    def check_name_brand_in_products(self):
+        for i in range(len(self.driver.find_elements_by_xpath("//div[@class = 'ident grid']"))):
+            self.driver.find_elements_by_xpath("//div[@class = 'ident grid']")[i].click()
+            brand_name = self.driver.find_element_by_xpath("//img[@title = 'Epiphone']").text
+            assert brand_name == "Epiphone"
 
