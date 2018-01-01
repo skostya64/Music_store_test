@@ -20,8 +20,8 @@ class CheckBassNamePage:
         self.driver.find_element_by_xpath("//span[@class = 'apply btn btn-ms-std btn-lg']").click()
 
     def check_name_brand_in_products(self):
-        for i in range(len(self.driver.find_elements_by_xpath("//div[@class = 'ident grid']"))):
-            self.driver.find_elements_by_xpath("//div[@class = 'ident grid']")[i].click()
+        for i in range(len(self.driver.find_elements_by_xpath("//div[@id = 'tile-product-BAS0008210-000']"))):
+            self.driver.find_elements_by_xpath("//div[@id = 'tile-product-BAS0008210-000']")[i].click()
             brand_name = self.driver.find_element_by_xpath("//img[@title = 'Epiphone']").text
             assert brand_name == "Epiphone"
 
